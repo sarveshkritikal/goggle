@@ -6,7 +6,8 @@ pipeline {
 stage('main_image') {
             steps {
 
-                sh 'python test_script_v1.6.py image/'
+                //sh 'python test_script_v1.6.py image/'
+        System.out.println("test");
 
             }
         }
