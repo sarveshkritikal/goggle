@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+    stages {
+
+	// Run Application for main image
+stage('main_image') {
+            steps {
+                sh 'python3 test_script_v1.6.py 80_main_image'
+            }
+        }
+
+        // Run Application for angled
+stage('angled') {
+            steps {
+                sh 'python3 test_script_v1.6.py angle'
+
+
+            }
+        }
+
+
+    }
+}
+
+
+
+
+
+
+
+			
+	
