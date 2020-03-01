@@ -14,7 +14,7 @@ stage('main_image') {
 stage('php version') {
             steps {
               //sh 'python2.7 test_script_v1.6.py image'
-             python --version
+             sh 'python --version'
             }
         }
 
