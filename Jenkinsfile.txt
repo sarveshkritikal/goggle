@@ -5,7 +5,8 @@ pipeline {
 	// Run Application for main image
 stage('main_image') {
             steps {
-              sh 'python2.7 test_script_v1.6.py image'
+              //sh 'python2.7 test_script_v1.6.py image'
+              echo 'test file '
             }
         }
 
