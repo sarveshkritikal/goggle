@@ -10,6 +10,13 @@ stage('main_image') {
             }
         }
 
+// Run Application for main image
+stage('php version') {
+            steps {
+              //sh 'python2.7 test_script_v1.6.py image'
+              sh 'php --version'
+            }
+        }
 
 
     }
