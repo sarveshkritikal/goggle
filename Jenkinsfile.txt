@@ -10,8 +10,7 @@ stage('blur') {
             catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
 
                sh 'python3 test_script_v1.6.py blur'
-                   // sh 'python3 --version'
-                   }
+                                      }
             }
         }
 
@@ -23,24 +22,9 @@ stage('curv') {
             catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
 
                sh 'python3 test_script_v1.6.py curve'
-                   // sh 'python3 --version'
-                   }
+                                   }
             }
         }
-
-
-
-        // Run Application for dark
-stage('dark') {
-            steps {
-
-            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
-
-               sh 'python3 test_script_v1.6.py dark'
-                                      }
-            }
-        }
-
 
  
 
