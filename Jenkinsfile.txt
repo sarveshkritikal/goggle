@@ -24,12 +24,13 @@ stage('angled') {
         }catch(exp){
 
                     echo  exp
-                    }
+                    
         }
                
-                echo currentBuild.result   
+                   
 
             }
+            echo currentBuild.result
         }
 
 
