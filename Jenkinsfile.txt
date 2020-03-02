@@ -17,16 +17,17 @@ stage('main_image') {
         // Run Application for angled
 stage('angled') {
             steps {
-        try{
+        try {
 
           sh 'python3 test_script_v1.6.py angle'
           // sh 'python3 --version'
-        }catch(Exception exp){
+        }catch(exp){
 
-        println "File not found or API not run"
+                    echo  exp
+                    }
         }
                
-                   
+                echo currentBuild.result   
 
             }
         }
