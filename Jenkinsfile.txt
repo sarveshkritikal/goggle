@@ -15,7 +15,7 @@ stage('main_image') {
      
 
         // Run Application for angled
-        try{
+        try {
 stage('angled') {
             steps {
 
