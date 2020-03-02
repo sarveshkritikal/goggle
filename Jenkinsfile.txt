@@ -2,19 +2,7 @@ pipeline {
     agent any
     stages {
 
-	// Run Application for main image
-stage('main_image') {
-            steps {
-                        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
-
-                sh 'python3 test_script_v1.6.py main_image'
-
-                //echo 'Test file'
-                }
-            }
-
-         }
-
+	
         // Run Application for Blur
 stage('blur') {
             steps {
@@ -26,19 +14,6 @@ stage('blur') {
                    }
             }
         }
-
-        // Run Application for angled
-stage('angled') {
-            steps {
-
-            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
-
-               sh 'python3 test_script_v1.6.py angled'
-                   // sh 'python3 --version'
-                   }
-            }
-        }
-
 
 
         // Run Application for curv
@@ -67,52 +42,7 @@ stage('dark') {
         }
 
 
- // Run Application for light-with-flash
-stage('light-with-flash') {
-            steps {
-
-            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
-
-               sh 'python3 test_script_v1.6.py light-with-flash'
-                                      }
-            }
-        }
-
-
- // Run Application for shadow
-stage('shadow') {
-            steps {
-
-            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
-
-               sh 'python3 test_script_v1.6.py shadow'
-                                      }
-            }
-        }
-
-// Run Application for single_source
-stage('single_source') {
-            steps {
-
-            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
-
-               sh 'python3 test_script_v1.6.py single_source'
-                                      }
-            }
-        }
-
-
-
-// Run Application for up_side
-stage('up_side') {
-            steps {
-
-            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
-
-               sh 'python3 test_script_v1.6.py up_side'
-                                      }
-            }
-        }
+ 
 
     }
 }
