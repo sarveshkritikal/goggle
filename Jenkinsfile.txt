@@ -1,21 +1,38 @@
 pipeline {
-   // agent {docker{image 'python:2.7'}}
-   agent any
+    agent any
     stages {
 
 	// Run Application for main image
 stage('main_image') {
             steps {
-              //sh 'python2.7 test_script_v1.6.py image'
-              echo 'test file '
+                sh 'python3 test_script_v1.6.py main_image'
+
+                //echo 'Test file'
+            }
+
+         }
+
+     
+
+        // Run Application for angled
+stage('angled') {
+            steps {
+
+               sh 'python3 test_script_v1.6.py angle'
+                   // sh 'python3 --version'
+
             }
         }
 
-// Run Application for main image
-stage('php version') {
+
+
+        // Run Application for angled
+stage('blur') {
             steps {
-              //sh 'python2.7 test_script_v1.6.py image'
-             sh 'python --version'
+
+               sh 'python3 test_script_v1.6.py blur'
+                   // sh 'python3 --version'
+
             }
         }
 
