@@ -34,9 +34,9 @@ stage('Report') {
 
             catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
 			sh 'ls -al allure-results'
-{
+		{
 
-		allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+               allure includeProperties: false, jdk: '', results: [[path: '/home/sarvesh/Documents/sarvesh/Sarvesh/ByJu/git_hub/allure']]
                                    }
             }
         }
@@ -48,3 +48,8 @@ stage('Report') {
 
 
 
+
+
+
+			
+	
