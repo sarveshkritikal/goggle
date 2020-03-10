@@ -26,6 +26,18 @@ stage('curv') {
             }
         }
 
+
+
+        // Report Generation
+stage('Report') {
+            steps {
+
+            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
+
+               allure includeProperties: false, jdk: '', results: [[path: '/home/sarvesh/Documents/sarvesh/Sarvesh/ByJu/git_hub/allure']]
+                                   }
+            }
+        }
  
 
     }
