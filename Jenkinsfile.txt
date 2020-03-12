@@ -34,8 +34,7 @@ stage('Report') {
 
             catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
 
-               allure([ includeProperties: false, jdk: '', properties: [], reportBuildPolicy: 'ALWAYS', results: [[path: 'allure-results']] ])
-                                   }
+publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'index.html', reportName: 'API HTML Report', reportTitles: ''])                                   }
             }
         }
  
