@@ -34,14 +34,12 @@ stage('Report') {
 
             catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
 
-publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'index.html', reportName: 'API HTML Report', reportTitles: ''])                                   }
+publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'index.html', reportName: 'API HTML Report', reportTitles: ''])                                   }
             }
         }
  
 
     }
 }
-
-
 
 
