@@ -5,6 +5,7 @@ pipeline {
 	
         // Run Application for main_image
 stage('main_image') {
+            git url : 'https://github.com/sarveshkritikal/goggle.git'
             steps {
 
             catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
@@ -17,6 +18,7 @@ stage('main_image') {
 
         // Run Application for upside_down
 stage('upside_down') {
+	git url : 'https://github.com/sarveshkritikal/goggle.git'
             steps {
 
             catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
