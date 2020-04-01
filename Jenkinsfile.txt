@@ -3,25 +3,25 @@ pipeline {
     stages {
 
 	
-        // Run Application for Blur
-stage('blur') {
+        // Run Application for main_image
+stage('main_image') {
             steps {
 
             catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
 
-               sh 'python3 test_script_v1.6.py blur'
+               sh 'python3 test_script_v1.6.py main_image'
                                       }
             }
         }
 
 
-        // Run Application for curv
-stage('curv') {
+        // Run Application for upside_down
+stage('upside_down') {
             steps {
 
             catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
 
-               sh 'python3 test_script_v1.6.py curve'
+               sh 'python3 test_script_v1.6.py upside_down'
                                    }
             }
         }
