@@ -7,7 +7,7 @@ import base64
 import sys,os
 import cv2
 enable_pageid = True
-goggle_ocr_url   = "https://byjuservernew.kritikalocr.com/internal_server/ocr/v7"
+goggle_ocr_url   = "https://byjuservernew.kritikalocr.com/internal_server/ocr/v10"
 headers          = { 
                      'Content-Type':'application/json',
                      'Accept':'text/plain',
