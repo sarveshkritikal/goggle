@@ -29,7 +29,7 @@ stage('curv') {
 
 
   // Archive the built artifacts
-stage('curv') {
+stage('curv1') {
             steps {
 
             catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
