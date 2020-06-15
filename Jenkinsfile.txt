@@ -27,11 +27,53 @@ stage('curv') {
         }
 
 
+
+  // Archive the built artifacts
+stage('curv') {
+            steps {
+
+            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
+
+               sh 'python3 test_script_v1.6.py curve'
+
+               archive (includes: 'pkg/*.gem')
+                                   }
+            }
+        }
+
+
+
+
+
  // Archive the built artifacts
-  archive (includes: 'pkg/*.gem')
+  
 
 
-  publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'coverage', reportFiles: 'index.html', reportName: 'RCov Report', reportTitles: 'coverage'])
+  stage('Test') {
+            steps {
+
+            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
+
+               sh 'python3 test_script_v1.6.py curve'
+
+               // publish html
+
+               publishHTML target: [
+            allowMissing: false,
+            alwaysLinkToLastBuild: false,
+            keepAll: true,
+            reportDir: 'coverage',
+            reportFiles: 'index.html',
+            reportName: 'RCov Report'
+          ]
+
+
+
+                                   }
+            }
+        }
+
+
 
 
         
