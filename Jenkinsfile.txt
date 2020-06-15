@@ -33,7 +33,7 @@ stage('Report') {
 
             catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
 
-               sh 'cucumber fileIncludePattern: '**/*.json', sortingMethod: 'ALPHABETICAL''
+               sh 'cucumber failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1'
                                    }
             }
         }
