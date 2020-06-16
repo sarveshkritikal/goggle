@@ -28,44 +28,25 @@ stage('curv') {
 
 
 
-  // Archive the built artifacts
-stage('curv1') {
-            steps {
-
-            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
-
-               sh 'python3 test_script_v1.6.py curve'
-
-               archive (includes: 'pkg/*.gem')
-                                   }
-            }
-        }
-
-
-
-
 
  // Archive the built artifacts
   
 
 
-  stage('Test') {
+  stage('HTML Report ') {
             steps {
 
             catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
-
-               sh 'python3 test_script_v1.6.py curve'
-
                // publish html
 
-               publishHTML target: [
+               publishHTML (target: [
             allowMissing: false,
-            alwaysLinkToLastBuild: false,
+            alwaysLinkToLastBuild: true,
             keepAll: true,
             reportDir: 'coverage',
             reportFiles: 'index.html',
             reportName: 'RCov Report'
-          ]
+          ])
 
 
 
