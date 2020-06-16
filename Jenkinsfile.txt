@@ -43,7 +43,7 @@ stage('curv') {
             allowMissing: false,
             alwaysLinkToLastBuild: true,
             keepAll: true,
-            reportDir: '/var/lib/jenkins/workspace/Goggle/coverage',
+            reportDir: '/home/sarvesh/Documents/sarvesh/Sarvesh/ByJu/git_hub/goggle/coverage',
             reportFiles: 'index.html',
             reportName: 'RCov Report'
           ])
